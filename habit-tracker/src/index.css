@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #3b82f6;
+  --color-brand-purple: #8b5cf6;
+  --color-glass: rgba(255, 255, 255, 0.1);
+  --color-glass-border: rgba(255, 255, 255, 0.2);
+}
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+  --secondary-gradient: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+  --background-color: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --accent-color: #38bdf8;
+  --success-color: #4ade80;
+  --error-color: #f87171;
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    @apply font-sans selection:bg-white/20 overflow-hidden;
+    background: var(--background-color);
+    color: var(--text-primary);
+    transition: background-color 0.5s ease;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-md border rounded-2xl shadow-xl;
+    background: var(--card-bg);
+    border-color: var(--glass-border);
+  }
+  
+  .glass-button {
+    @apply backdrop-blur-sm border transition-all duration-300 rounded-xl px-6 py-3 font-semibold active:scale-95;
+    background: var(--card-bg);
+    border-color: var(--glass-border);
+    color: var(--text-primary);
+  }
+
+  .glass-input {
+    @apply border rounded-xl px-4 py-3 outline-none transition-all;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--glass-border);
+    color: var(--text-primary);
+  }
+}
+
+/* Custom scrollbar for mobile feel */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

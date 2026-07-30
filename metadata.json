@@ -1,0 +1,5 @@
+{
+  "name": "Habit Tracker",
+  "description": "A modern gradient glassmorphism habit tracking app for students with streaks, calendar, and local persistence.",
+  "requestFramePermissions": []
+}
