@@ -25,7 +25,7 @@ const WeeklyProgressChart: React.FC<WeeklyProgressChartProps> = ({ habits }) => 
 
   return (
     <div className="glass-card p-6 mb-8">
-      <h3 className="text-sm font-semibold mb-6 text-[var(--text-secondary)] uppercase tracking-widest">
+      <h3 className="text-sm font-semibold mb-6 text-() uppercase tracking-widest">
         Weekly Activity
       </h3>
       <div className="h-48 w-full">

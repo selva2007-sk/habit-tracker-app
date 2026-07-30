@@ -24,7 +24,7 @@ const DashboardStatsCard: React.FC<DashboardStatsCardProps> = ({
         <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center mb-2">
           <Target className="w-5 h-5 text-blue-400" />
         </div>
-        <p className="text-[10px] uppercase tracking-wider text-[var(--text-secondary)]">Goal</p>
+        <p className="text-[10px] uppercase tracking-wider text-()">Goal</p>
         <p className="text-lg font-bold">{completionRate}%</p>
       </motion.div>
 
@@ -37,7 +37,7 @@ const DashboardStatsCard: React.FC<DashboardStatsCardProps> = ({
         <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center mb-2">
           <Flame className="w-5 h-5 text-orange-400" />
         </div>
-        <p className="text-[10px] uppercase tracking-wider text-[var(--text-secondary)]">Streak</p>
+        <p className="text-[10px] uppercase tracking-wider text-()">Streak</p>
         <p className="text-lg font-bold">{currentStreak}d</p>
       </motion.div>
 
@@ -50,7 +50,7 @@ const DashboardStatsCard: React.FC<DashboardStatsCardProps> = ({
         <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mb-2">
           <CheckCircle2 className="w-5 h-5 text-emerald-400" />
         </div>
-        <p className="text-[10px] uppercase tracking-wider text-[var(--text-secondary)]">Total</p>
+        <p className="text-[10px] uppercase tracking-wider text-()">Total</p>
         <p className="text-lg font-bold">{totalHabits}</p>
       </motion.div>
     </div>

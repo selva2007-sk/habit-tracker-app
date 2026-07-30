@@ -28,7 +28,7 @@ const HabitCard: React.FC<HabitCardProps> = ({ habit, index }) => {
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={`glass-card p-4 flex items-center justify-between transition-all duration-500 relative overflow-hidden ${
-        isCompleted ? 'bg-white/20 border-[var(--success-color)]/30' : 'bg-white/10'
+        isCompleted ? 'bg-white/20 border-()/30' : 'bg-white/10'
       }`}
     >
       {/* Ripple/Glow Effect when completed */}
@@ -38,7 +38,7 @@ const HabitCard: React.FC<HabitCardProps> = ({ habit, index }) => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1.5 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-[var(--success-color)]/5 blur-3xl pointer-events-none"
+            className="absolute inset-0 bg-()/5 blur-3xl pointer-events-none"
           />
         )}
       </AnimatePresence>
@@ -77,14 +77,14 @@ const HabitCard: React.FC<HabitCardProps> = ({ habit, index }) => {
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1">
             <div className="flex items-center gap-1.5">
               <Flame className={`w-3.5 h-3.5 ${habit.currentStreak > 0 ? 'text-orange-400' : 'text-white/20'}`} />
-              <span className="text-xs font-medium text-[var(--text-secondary)]">
-                Streak: <span className="text-[var(--text-primary)]">{habit.currentStreak}d</span>
+              <span className="text-xs font-medium text-()">
+                Streak: <span className="text-()">{habit.currentStreak}d</span>
               </span>
             </div>
             <div className="flex items-center gap-1.5">
               <Trophy className={`w-3.5 h-3.5 ${habit.longestStreak > 0 ? 'text-yellow-400' : 'text-white/20'}`} />
-              <span className="text-xs font-medium text-[var(--text-secondary)]">
-                Best: <span className="text-[var(--text-primary)]">{habit.longestStreak}d</span>
+              <span className="text-xs font-medium text-()">
+                Best: <span className="text-()">{habit.longestStreak}d</span>
               </span>
             </div>
           </div>
@@ -99,7 +99,7 @@ const HabitCard: React.FC<HabitCardProps> = ({ habit, index }) => {
         }}
         className={`w-12 h-12 rounded-full flex items-center justify-center transition-all shrink-0 ml-4 relative z-10 ${
           isCompleted 
-            ? 'bg-[var(--success-color)] text-white shadow-lg shadow-[var(--success-color)]/40' 
+            ? 'bg-() text-white shadow-lg shadow-()/40' 
             : 'bg-white/5 border-2 border-white/10 text-white/20 hover:border-white/30 hover:bg-white/10'
         }`}
       >

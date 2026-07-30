@@ -70,7 +70,7 @@ const CalendarScreen: React.FC = () => {
 
         <div className="grid grid-cols-7 gap-2 mb-4">
           {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, i) => (
-            <div key={`${day}-${i}`} className="text-center text-xs font-bold text-[var(--text-secondary)]">
+            <div key={`${day}-${i}`} className="text-center text-xs font-bold text-()">
               {day}
             </div>
           ))}
@@ -88,21 +88,21 @@ const CalendarScreen: React.FC = () => {
                 key={i}
                 className={`aspect-square flex flex-col items-center justify-center rounded-lg relative transition-all ${
                   !isCurrentMonth ? 'opacity-20' : 'opacity-100'
-                } ${isToday ? 'border border-[var(--accent-color)]/50' : ''}`}
+                } ${isToday ? 'border border-()/50' : ''}`}
               >
-                <span className={`text-xs z-10 ${isToday ? 'text-[var(--accent-color)] font-bold' : ''}`}>
+                <span className={`text-xs z-10 ${isToday ? 'text-() font-bold' : ''}`}>
                   {format(day, 'd')}
                 </span>
                 {progress > 0 && isCurrentMonth && (
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    className="absolute inset-1 rounded-md bg-[var(--accent-color)]/20"
+                    className="absolute inset-1 rounded-md bg-()/20"
                     style={{ opacity: progress }}
                   />
                 )}
                 {progress === 1 && isCurrentMonth && (
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-[var(--success-color)] rounded-full flex items-center justify-center">
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-() rounded-full flex items-center justify-center">
                     <Check className="w-2 h-2 text-white" />
                   </div>
                 )}
@@ -117,14 +117,14 @@ const CalendarScreen: React.FC = () => {
         <h3 className="text-lg font-bold">Monthly Stats</h3>
         <div className="grid grid-cols-2 gap-4">
           <div className="glass-card p-4">
-            <p className="text-[var(--text-secondary)] text-[10px] uppercase tracking-wider font-bold">Total Done</p>
-            <p className="text-2xl font-bold mt-1 text-[var(--accent-color)]">
+            <p className="text-() text-[10px] uppercase tracking-wider font-bold">Total Done</p>
+            <p className="text-2xl font-bold mt-1 text-()">
               {habits.reduce((acc, h) => acc + h.completedDates.filter(d => isSameMonth(new Date(d), currentMonth)).length, 0)}
             </p>
           </div>
           <div className="glass-card p-4">
-            <p className="text-[var(--text-secondary)] text-[10px] uppercase tracking-wider font-bold">Avg Progress</p>
-            <p className="text-2xl font-bold mt-1 text-[var(--accent-color)]">
+            <p className="text-() text-[10px] uppercase tracking-wider font-bold">Avg Progress</p>
+            <p className="text-2xl font-bold mt-1 text-()">
               {Math.round(calendarDays.reduce((acc, day) => acc + (getCompletionForDay(day).length / (habits.length || 1)), 0) / calendarDays.length * 100)}%
             </p>
           </div>

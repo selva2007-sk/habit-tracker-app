@@ -35,7 +35,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onAddHabit, onHabitClick }) => 
         className="p-8 flex justify-between items-start"
       >
         <div>
-          <h4 className="text-[var(--text-secondary)] font-medium">{format(today, 'EEEE, MMM d')}</h4>
+          <h4 className="text-() font-medium">{format(today, 'EEEE, MMM d')}</h4>
           <h2 className="text-2xl font-bold mt-1">Hello, {user?.name || 'there'}!</h2>
         </div>
         <motion.button 
@@ -83,7 +83,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onAddHabit, onHabitClick }) => 
           <motion.button 
             {...bounceButton}
             onClick={onAddHabit}
-            className="text-sm font-medium text-[var(--accent-color)] flex items-center gap-1"
+            className="text-sm font-medium text-() flex items-center gap-1"
           >
             <Plus className="w-4 h-4" /> Add New
           </motion.button>
@@ -94,17 +94,17 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onAddHabit, onHabitClick }) => 
             variants={slideUp}
             className="glass-card p-12 flex flex-col items-center justify-center text-center"
           >
-            <div className="w-20 h-20 bg-[var(--accent-color)]/10 rounded-full flex items-center justify-center mb-6">
-              <CheckCircle2 className="w-10 h-10 text-[var(--accent-color)]" />
+            <div className="w-20 h-20 bg-()/10 rounded-full flex items-center justify-center mb-6">
+              <CheckCircle2 className="w-10 h-10 text-()" />
             </div>
             <h4 className="text-xl font-bold mb-2">No habits yet</h4>
-            <p className="text-[var(--text-secondary)] mb-8">
+            <p className="text-() mb-8">
               Start building your first habit and master your routine!
             </p>
             <motion.button 
               {...bounceButton}
               onClick={onAddHabit}
-              className="glass-button bg-[var(--accent-color)] text-white border-none px-8"
+              className="glass-button bg-() text-white border-none px-8"
             >
               Create First Habit
             </motion.button>
@@ -130,7 +130,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onAddHabit, onHabitClick }) => 
       <motion.button
         {...bounceButton}
         onClick={onAddHabit}
-        className="fixed bottom-28 right-8 w-14 h-14 bg-[var(--accent-color)] text-white rounded-full shadow-2xl flex items-center justify-center z-50"
+        className="fixed bottom-28 right-8 w-14 h-14 bg-() text-white rounded-full shadow-2xl flex items-center justify-center z-50"
       >
         <Plus className="w-8 h-8" />
       </motion.button>

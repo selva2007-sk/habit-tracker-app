@@ -48,7 +48,7 @@ const HabitDetailScreen: React.FC<HabitDetailScreenProps> = ({ habitId, onBack, 
           <motion.button 
             {...bounceButton}
             onClick={onEdit}
-            className="w-10 h-10 glass-card flex items-center justify-center text-[var(--accent-color)]"
+            className="w-10 h-10 glass-card flex items-center justify-center text-()"
           >
             <Edit2 className="w-5 h-5" />
           </motion.button>
@@ -65,31 +65,31 @@ const HabitDetailScreen: React.FC<HabitDetailScreenProps> = ({ habitId, onBack, 
       <div className="flex flex-col items-center text-center mb-10">
         <motion.div 
           layoutId={`habit-icon-${habit.id}`}
-          className="w-20 h-20 glass-card flex items-center justify-center mb-4 text-[var(--accent-color)]"
+          className="w-20 h-20 glass-card flex items-center justify-center mb-4 text-()"
         >
           <IconComponent className="w-10 h-10" />
         </motion.div>
         <h2 className="text-3xl font-bold">{habit.title}</h2>
-        <p className="text-[var(--text-secondary)] mt-1 capitalize">{habit.frequency} • {habit.goal} {habit.unit}</p>
+        <p className="text-() mt-1 capitalize">{habit.frequency} • {habit.goal} {habit.unit}</p>
       </div>
 
       <div className="grid grid-cols-2 gap-4 mb-8">
         <div className="glass-card p-6 flex flex-col items-center">
           <Flame className="w-8 h-8 text-orange-400 mb-2" />
           <p className="text-2xl font-bold">{habit.currentStreak}</p>
-          <p className="text-xs text-[var(--text-secondary)] uppercase">Current Streak</p>
+          <p className="text-xs text-() uppercase">Current Streak</p>
         </div>
         <div className="glass-card p-6 flex flex-col items-center">
           <Trophy className="w-8 h-8 text-yellow-400 mb-2" />
           <p className="text-2xl font-bold">{habit.longestStreak}</p>
-          <p className="text-xs text-[var(--text-secondary)] uppercase">Best Streak</p>
+          <p className="text-xs text-() uppercase">Best Streak</p>
         </div>
       </div>
 
       <div className="glass-card p-6 mb-8 flex items-center justify-between">
         <div>
           <h3 className="font-bold text-lg">Overall Progress</h3>
-          <p className="text-sm text-[var(--text-secondary)]">Total completions: {habit.totalCompletions}</p>
+          <p className="text-sm text-()">Total completions: {habit.totalCompletions}</p>
         </div>
         <div className="w-16 h-16">
           <ProgressCircle percentage={Math.min(100, completionRate)} />
@@ -98,7 +98,7 @@ const HabitDetailScreen: React.FC<HabitDetailScreenProps> = ({ habitId, onBack, 
 
       <div className="glass-card p-6 mb-8">
         <h3 className="font-bold mb-4 flex items-center gap-2">
-          <CalendarIcon className="w-5 h-5 text-[var(--accent-color)]" />
+          <CalendarIcon className="w-5 h-5 text-()" />
           Recent History
         </h3>
         <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
@@ -108,11 +108,11 @@ const HabitDetailScreen: React.FC<HabitDetailScreenProps> = ({ habitId, onBack, 
             const dStr = format(date, 'yyyy-MM-dd');
             const done = habit.completedDates.includes(dStr);
             return (
-              <div key={i} className="flex flex-col items-center gap-2 min-w-[40px]">
-                <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${done ? 'bg-[var(--success-color)]/20 text-[var(--success-color)]' : 'bg-white/5 text-white/20'}`}>
+              <div key={i} className="flex flex-col items-center gap-2 min-w-10">
+                <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${done ? 'bg-()/20 text-()' : 'bg-white/5 text-white/20'}`}>
                   {done && <CheckCircle2 className="w-4 h-4" />}
                 </div>
-                <span className="text-[10px] text-[var(--text-secondary)]">{format(date, 'dd')}</span>
+                <span className="text-[10px] text-()">{format(date, 'dd')}</span>
               </div>
             );
           })}
@@ -124,8 +124,8 @@ const HabitDetailScreen: React.FC<HabitDetailScreenProps> = ({ habitId, onBack, 
         onClick={() => toggleHabitCompletion(habit.id, new Date())}
         className={`w-full py-4 rounded-2xl font-bold transition-all flex items-center justify-center gap-2 ${
           isCompletedToday 
-            ? 'bg-[var(--success-color)]/20 text-[var(--success-color)] border border-[var(--success-color)]/30' 
-            : 'bg-white text-[var(--accent-color)] shadow-xl'
+            ? 'bg-()/20 text-() border border-()/30' 
+            : 'bg-white text-() shadow-xl'
         }`}
       >
         {isCompletedToday ? (
@@ -161,7 +161,7 @@ const HabitDetailScreen: React.FC<HabitDetailScreenProps> = ({ habitId, onBack, 
                 <AlertTriangle className="w-8 h-8 text-red-400" />
               </div>
               <h3 className="text-xl font-bold mb-2">Delete Habit?</h3>
-              <p className="text-[var(--text-secondary)] mb-8">
+              <p className="text-() mb-8">
                 Are you sure you want to delete this habit? This action cannot be undone.
               </p>
               <div className="flex flex-col w-full gap-3">

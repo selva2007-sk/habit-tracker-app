@@ -30,7 +30,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onLogout, onEditProfile }
         <motion.button
           {...bounceButton}
           onClick={onEditProfile}
-          className="text-sm font-medium text-[var(--accent-color)]"
+          className="text-sm font-medium text-()"
         >
           Edit Profile
         </motion.button>
@@ -47,9 +47,9 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onLogout, onEditProfile }
               referrerPolicy="no-referrer"
             />
           ) : (
-            <User className="w-12 h-12 text-[var(--text-primary)] opacity-80" />
+            <User className="w-12 h-12 text-() opacity-80" />
           )}
-          <div className="absolute bottom-0 right-0 w-8 h-8 bg-[var(--success-color)] rounded-full border-4 border-[var(--background-color)] flex items-center justify-center">
+          <div className="absolute bottom-0 right-0 w-8 h-8 bg-() rounded-full border-4 border-() flex items-center justify-center">
             <div className="w-2 h-2 bg-white rounded-full" />
           </div>
         </div>
@@ -61,19 +61,19 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onLogout, onEditProfile }
         <div className="glass-card p-4 flex flex-col items-center">
           <Flame className="w-6 h-6 text-orange-400 mb-2" />
           <p className="text-2xl font-bold">{totalStreaks}</p>
-          <p className="text-[var(--text-secondary)] text-xs uppercase">Total Streaks</p>
+          <p className="text-() text-xs uppercase">Total Streaks</p>
         </div>
         <div className="glass-card p-4 flex flex-col items-center">
           <Trophy className="w-6 h-6 text-yellow-400 mb-2" />
           <p className="text-2xl font-bold">{longestStreak}</p>
-          <p className="text-[var(--text-secondary)] text-xs uppercase">Best Streak</p>
+          <p className="text-() text-xs uppercase">Best Streak</p>
         </div>
       </div>
 
       {/* Theme Selector */}
       <div className="glass-card p-6 mb-8">
         <div className="flex items-center gap-3 mb-4">
-          <Palette className="w-5 h-5 text-[var(--accent-color)]" />
+          <Palette className="w-5 h-5 text-()" />
           <h4 className="font-bold">App Theme</h4>
         </div>
         <div className="grid grid-cols-2 gap-3">
@@ -84,7 +84,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onLogout, onEditProfile }
               onClick={() => setTheme(t.id)}
               className={`p-3 rounded-xl border-2 transition-all text-left ${
                 theme.id === t.id 
-                  ? 'border-[var(--accent-color)] bg-white/10' 
+                  ? 'border-() bg-white/10' 
                   : 'border-transparent bg-white/5'
               }`}
             >
@@ -109,7 +109,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ onLogout, onEditProfile }
             key={i}
             className="w-full flex items-center gap-4 p-4 hover:bg-white/5 border-b border-white/5 last:border-0"
           >
-            <div className="text-[var(--text-secondary)]">{item.icon}</div>
+            <div className="text-()">{item.icon}</div>
             <span className="flex-1 text-left font-medium">{item.label}</span>
           </button>
         ))}

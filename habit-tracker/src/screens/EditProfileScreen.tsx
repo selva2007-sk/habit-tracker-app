@@ -50,7 +50,7 @@ const EditProfileScreen: React.FC<EditProfileScreenProps> = ({ onBack }) => {
         {/* Avatar Selection */}
         <motion.div variants={slideUp} className="flex flex-col items-center space-y-4">
           <div className="relative">
-            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[var(--accent-color)] bg-white/10">
+            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-() bg-white/10">
               <img 
                 src={selectedAvatar} 
                 alt="Avatar" 
@@ -58,7 +58,7 @@ const EditProfileScreen: React.FC<EditProfileScreenProps> = ({ onBack }) => {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="absolute bottom-0 right-0 w-8 h-8 bg-[var(--accent-color)] rounded-full flex items-center justify-center border-2 border-[var(--background-color)]">
+            <div className="absolute bottom-0 right-0 w-8 h-8 bg-() rounded-full flex items-center justify-center border-2 border-()">
               <Camera className="w-4 h-4 text-white" />
             </div>
           </div>
@@ -70,7 +70,7 @@ const EditProfileScreen: React.FC<EditProfileScreenProps> = ({ onBack }) => {
                 {...bounceButton}
                 onClick={() => setSelectedAvatar(avatar)}
                 className={`w-12 h-12 rounded-full overflow-hidden border-2 transition-all ${
-                  selectedAvatar === avatar ? 'border-[var(--accent-color)] scale-110' : 'border-transparent opacity-50'
+                  selectedAvatar === avatar ? 'border-() scale-110' : 'border-transparent opacity-50'
                 }`}
               >
                 <img src={avatar} alt={`Avatar ${i}`} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
@@ -82,7 +82,7 @@ const EditProfileScreen: React.FC<EditProfileScreenProps> = ({ onBack }) => {
         {/* Form Fields */}
         <div className="space-y-6">
           <motion.div variants={slideUp} className="space-y-2">
-            <label className="text-sm font-medium text-[var(--text-secondary)] flex items-center gap-2">
+            <label className="text-sm font-medium text-() flex items-center gap-2">
               <Tag className="w-4 h-4" /> Display Name
             </label>
             <input
@@ -90,12 +90,12 @@ const EditProfileScreen: React.FC<EditProfileScreenProps> = ({ onBack }) => {
               placeholder="Your name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="glass-input w-full focus:border-[var(--accent-color)]/50 transition-all"
+              className="glass-input w-full focus:border-()/50 transition-all"
             />
           </motion.div>
 
           <motion.div variants={slideUp} className="space-y-2">
-            <label className="text-sm font-medium text-[var(--text-secondary)] flex items-center gap-2">
+            <label className="text-sm font-medium text-() flex items-center gap-2">
               <User className="w-4 h-4" /> Username
             </label>
             <input
@@ -103,7 +103,7 @@ const EditProfileScreen: React.FC<EditProfileScreenProps> = ({ onBack }) => {
               placeholder="your username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="glass-input w-full focus:border-[var(--accent-color)]/50 transition-all"
+              className="glass-input w-full focus:border-()/50 transition-all"
             />
           </motion.div>
         </div>
@@ -112,7 +112,7 @@ const EditProfileScreen: React.FC<EditProfileScreenProps> = ({ onBack }) => {
           variants={slideUp}
           {...bounceButton}
           onClick={handleSave}
-          className="glass-button w-full flex items-center justify-center gap-2 bg-[var(--accent-color)] text-white border-none py-4 mt-8 shadow-xl shadow-[var(--accent-color)]/20"
+          className="glass-button w-full flex items-center justify-center gap-2 bg-() text-white border-none py-4 mt-8 shadow-xl shadow-()/20"
         >
           <Check className="w-5 h-5" /> Save Changes
         </motion.button>

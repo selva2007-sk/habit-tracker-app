@@ -17,23 +17,23 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onComplete }) => {
     >
       <div className="mt-12">
         <motion.div variants={slideUp}>
-          <div className="w-16 h-16 bg-[var(--accent-color)]/20 rounded-2xl flex items-center justify-center mb-8">
-            <Target className="w-8 h-8 text-[var(--accent-color)]" />
+          <div className="w-16 h-16 bg-()/20 rounded-2xl flex items-center justify-center mb-8">
+            <Target className="w-8 h-8 text-()" />
           </div>
           <h2 className="text-4xl font-bold leading-tight">
             Build Better <br />
-            <span className="text-[var(--accent-color)]">Habits Today.</span>
+            <span className="text-()">Habits Today.</span>
           </h2>
-          <p className="text-[var(--text-secondary)] mt-4 text-lg">
+          <p className="text-() mt-4 text-lg">
             Track your progress, build streaks, and achieve your goals with ease.
           </p>
         </motion.div>
 
         <div className="mt-12 space-y-6">
           {[
-            { icon: <CheckCircle2 className="text-[var(--success-color)]" />, title: "Daily Tracking", desc: "Mark your habits as done daily." },
+            { icon: <CheckCircle2 className="text-()" />, title: "Daily Tracking", desc: "Mark your habits as done daily." },
             { icon: <TrendingUp className="text-orange-400" />, title: "Streak System", desc: "Stay motivated with visual streaks." },
-            { icon: <Calendar className="text-[var(--accent-color)]" />, title: "History View", desc: "See your journey in a calendar." },
+            { icon: <Calendar className="text-()" />, title: "History View", desc: "See your journey in a calendar." },
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -45,7 +45,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onComplete }) => {
               </div>
               <div>
                 <h4 className="font-semibold">{item.title}</h4>
-                <p className="text-[var(--text-secondary)] text-sm">{item.desc}</p>
+                <p className="text-() text-sm">{item.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -56,7 +56,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onComplete }) => {
         variants={slideUp}
         {...bounceButton}
         onClick={onComplete}
-        className="glass-button w-full py-4 text-lg bg-[var(--accent-color)] text-white border-none shadow-xl shadow-[var(--accent-color)]/20 mb-8"
+        className="glass-button w-full py-4 text-lg bg-() text-white border-none shadow-xl shadow-()/20 mb-8"
       >
         Get Started
       </motion.button>
